@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center py-4">
+        <div class="col-12 col-lg-8">
             <div class="card panel-default">
                 <div class="card-body">
                     <div class="card-header mb-3">
                         <h1 class="card-title">An Arbitraty Blog Post</h1>
-                        <span class="text-muted"> by <a href="#">James Dev</a> </span> <br/>
+                        <span class="text-muted"> by <a href="#">James Dev</a> </span> <br />
                         <span class="text-muted"><em>Posted on April 2, 2021 at 12:00 PM</em></span>
                     </div>
                     <div class="card-text">
@@ -19,15 +19,31 @@
                             Maecenas a lacus mauris. In at libero dolor, ut porta nunc. Nulla hendrerit varius sem id commodo. Sed nec posuere sem. Duis pellentesque mattis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse egestas hendrerit euismod. Phasellus ultrices porta sagittis. Vestibulum erat erat, faucibus id sagittis ac, porta nec quam. Sed nec sapien nec lorem scelerisque euismod quis a arcu.
                         </p>
                     </div>
-                    COMMENT FORM HERE
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            COMMENT LIST HERE
+    <div class="row justify-content-center py-4">
+        <div class="col-12 col-lg-8">
+            COMMENT FORM HERE
+            <div class="card bg-light">
+                <div class="card-body">
+
+                    <div class="callout callout-default">
+                        <div class="avatar">
+                            <img src="{{url('/images/user-icon.jpg')}}" alt="icon" class="img-fluid"/>
+                        </div>
+                        <div class="comment-meta ml-3">
+                            <strong class="text-primary mr-1">Default Callout</strong>
+                            <small class="text-muted">This is a default callout.</small>
+                        </div>
+                    </div>
+                    <example-component />
+
+                </div>
+            </div>
         </div>
     </div>
 
