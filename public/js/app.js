@@ -49955,9 +49955,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['comment'],
@@ -50002,95 +49999,90 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "a",
-      {
-        attrs: { href: "#" },
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.showReplyForm($event)
-          }
-        }
-      },
-      [_vm._v("Reply")]
-    ),
+  return _c("div", { staticClass: "clearfix" }, [
+    !_vm.reply_form
+      ? _c(
+          "a",
+          {
+            staticClass: "comment-reply float-right",
+            attrs: { href: "#" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.showReplyForm($event)
+              }
+            }
+          },
+          [
+            _c("i", {
+              staticClass: "fa fa-reply-all",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" Reply")
+          ]
+        )
+      : _vm._e(),
     _vm._v(" "),
     _vm.reply_form
       ? _c("div", [
-          _c("div", { staticClass: "form-group" }, [
-            _c("div", { staticClass: "d-flex align-items-start" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reply_text,
-                    expression: "reply_text"
-                  }
-                ],
-                staticClass: "form-control ml-2",
-                attrs: { placeholder: "Add a public reply...", cols: "50" },
-                domProps: { value: _vm.reply_text },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.reply_text = $event.target.value
-                  }
+          _c("div", { staticClass: "form-group my-2 ml-4" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.reply_text,
+                  expression: "reply_text"
                 }
-              })
-            ])
+              ],
+              staticClass: "form-control",
+              attrs: { placeholder: "Add a public reply...", cols: "50" },
+              domProps: { value: _vm.reply_text },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.reply_text = $event.target.value
+                }
+              }
+            })
           ]),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-secondary",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.hideReplyForm()
+          _c("div", { staticClass: "form-group ml-4" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-secondary btn-sm",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.hideReplyForm()
+                  }
                 }
-              }
-            },
-            [_vm._v("Cancel")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.reply()
+              },
+              [_vm._v("Cancel")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-success btn-sm",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.reply()
+                  }
                 }
-              }
-            },
-            [_vm._v("Reply")]
-          )
+              },
+              [_vm._v("Reply")]
+            )
+          ])
         ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "avatar" }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "/images/user-icon.jpg", alt: "icon" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -50108,6 +50100,12 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ReplyForm_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ReplyForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ReplyForm_vue__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50161,50 +50159,75 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ml-4 reply" }, [
-    _vm.comment.replies
-      ? _c(
-          "div",
-          _vm._l(_vm.comment.replies, function(comment) {
-            return _c(
-              "div",
-              { key: comment.id },
-              [
-                _c("div", { staticClass: "d-flex mt-3 ml-4" }, [
-                  _vm._m(0, true),
-                  _vm._v(" "),
+  return _c(
+    "div",
+    { staticClass: "reply", class: "reply-" + _vm.nextReplyDepth },
+    [
+      _vm.comment.replies
+        ? _c(
+            "div",
+            _vm._l(_vm.comment.replies, function(comment) {
+              return _c(
+                "div",
+                { key: comment.id },
+                [
                   _c(
                     "div",
-                    { staticClass: "ml-3" },
+                    {
+                      staticClass: "reply-wrap",
+                      class: "reply-" + _vm.nextReplyDepth
+                    },
                     [
-                      _c("h6", [
-                        _c("strong", [_vm._v(_vm._s(comment.user.name))]),
-                        _vm._v(" "),
-                        _c("small", [_vm._v(_vm._s(comment.created_at))])
-                      ]),
+                      _vm._m(0, true),
                       _vm._v(" "),
-                      _c("div", [_vm._v(_vm._s(comment.content))]),
-                      _vm._v(" "),
-                      _vm.nextReplyDepth < 3
-                        ? _c("reply-form", { attrs: { comment: comment } })
-                        : _vm._e()
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("replies", {
-                  key: comment.id,
-                  attrs: { comment: comment, depth: _vm.nextReplyDepth }
-                })
-              ],
-              1
-            )
-          }),
-          0
-        )
-      : _vm._e()
-  ])
+                      _c("div", { staticClass: "reply-box" }, [
+                        _c("div", { staticClass: "body" }, [
+                          _c("span", { staticClass: "tip tip-left" }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "message" },
+                            [
+                              _c("h6", { staticClass: "mb-2" }, [
+                                _c("strong", [
+                                  _vm._v(_vm._s(comment.user.name))
+                                ]),
+                                _vm._v(" "),
+                                _c("small", [
+                                  _vm._v(_vm._s(comment.created_at))
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "reply-content" }, [
+                                _vm._v(_vm._s(comment.content))
+                              ]),
+                              _vm._v(" "),
+                              _vm.nextReplyDepth < 3
+                                ? _c("reply-form", {
+                                    attrs: { comment: comment }
+                                  })
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("replies", {
+                    key: comment.id,
+                    attrs: { comment: comment, depth: _vm.nextReplyDepth }
+                  })
+                ],
+                1
+              )
+            }),
+            0
+          )
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -50246,7 +50269,7 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "comment-meta ml-3" }, [
-            _c("strong", { staticClass: "text-primary mr-1" }, [
+            _c("strong", { staticClass: "mr-1" }, [
               _vm._v(_vm._s(_vm.comment.user.name))
             ]),
             _vm._v(" "),

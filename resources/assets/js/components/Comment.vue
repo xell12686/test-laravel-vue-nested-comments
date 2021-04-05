@@ -6,7 +6,7 @@
                 <img src="/images/user-icon.jpg" alt="icon" class="img-fluid"/>
             </div>
             <div class="comment-meta ml-3">
-                <strong class="text-primary mr-1">{{ comment.user.name }}</strong>
+                <strong class="mr-1">{{ comment.user.name }}</strong>
                 <small class="text-muted">{{ comment.created_at }}</small>
             </div>
             <div class="content">

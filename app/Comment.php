@@ -21,7 +21,7 @@ class Comment extends Model
         return Carbon::parse($value)->diffForHumans();
     }
 
-    public function childrens()
+    public function children()
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }

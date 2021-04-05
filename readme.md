@@ -1,11 +1,7 @@
 
 ## Laravel 5.5 + Vue.js - Nested Comment Sytem
 
-This is a test project to be submitted to Marhian & Sohrab, it will be set to private after the test has been checked.
-
-## Coding Test Instructions:
-
-Create a comment system single-page web application with Laravel 5.5+ and VueJS with the following requirements:
+Objectives:
 - Assume that there is only one Blog Post that can be commented.
 - Only the user’s name and comment text are required to post a comment.
 - A comment can be replied with another comment.
@@ -27,7 +23,3 @@ Create a comment system single-page web application with Laravel 5.5+ and VueJS 
 - Open http://127.0.0.1:8000/ in browser
 - Login / Register and account
 - Add Comments from to popalate database and test app
-
-## App Video demo
-
-https://www.loom.com/share/2566b58364184cc0b732286cf7de658e

@@ -1,6 +1,5 @@
-
 .card.comments-list {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .avatar {
@@ -12,16 +11,102 @@
     .reply & {
         width: 30px;
         height: 30px;
+        margin-top: 5px;
+    }
+}
+
+a.comment-reply {
+    background-color: $green;
+    border: none;
+    display: inline-block;
+    color: #f8fafc;
+    padding: 10px 10px;
+    font-size: 10px;
+    border-radius: 3px;
+    i {
+        margin-right: 3px;
+    }
+    &:hover,
+    &:focus {
+        background-color: darken($green, 10);
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.reply {
+    position: relative;
+    margin-left: 30px;
+    margin-top: 10px;
+    &.reply-1 {
+        margin-bottom: 20px;
+        margin-left: 5px;
+    }
+    hr {
+        display: none;
+    }
+    .reply-wrap {
+        display: grid;
+        grid-template-columns: 30px auto;
+        &.reply-1 {
+            margin-top: 20px;
+        }
+    }
+    .reply-body {
+        padding-right: 30px;
+    }
+
+    .reply-box {
+        display: inline-block;
+        margin-left: 20px;
+        .tip {
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            background: transparent;
+            border: 10px solid $white;
+            top: 10px;
+            left: -20px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .body {
+            position: relative;
+            height: auto;
+            padding: 5px;
+            background-color: $white;
+            border-radius: 5px;
+            .message {
+                min-height: 30px;
+                border-radius: 3px;
+                font-family: Arial;
+                font-size: 14px;
+                line-height: 1.5;
+                color: dimgray;
+                padding: 5px 65px 5px 10px;
+                strong {
+                    color:$black;
+                }
+            }
+            a {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                padding: 3px 5px;
+            }
+        }
     }
 }
 
 .callout {
-    padding: 10px 20px;
+    padding: 20px;
     margin: 15px 0;
     border: 1px solid #eee;
     border-left-width: 5px;
     border-radius: 3px;
-    background-color: $white;
+    background-color: white;
     .comment-meta {
         display: inline-block;
         position: relative;
@@ -38,7 +123,6 @@
     .content {
         font-size: 14px;
     }
-
 }
 @each $name, $color in (default, #777), (primary, #428bca), (success, #5cb85c),
     (danger, #d9534f), (warning, #f0ad4e), (info, #5bc0de), (bdc, #29527a)

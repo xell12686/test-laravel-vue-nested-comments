@@ -1,17 +1,14 @@
 <template>
-    <div>
-        <a href="#" @click.prevent="showReplyForm">Reply</a>
+    <div class="clearfix">
+        <a href="#" class="comment-reply float-right" v-if="!reply_form" @click.prevent="showReplyForm"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a>
         <div v-if="reply_form">
-            <div class="form-group">
-            <div class="d-flex align-items-start">
-                <div class="avatar">
-                    <img src="/images/user-icon.jpg" alt="icon" class="img-fluid"/>
-                </div>
-                <textarea class="form-control ml-2" v-model="reply_text" placeholder="Add a public reply..." cols="50"></textarea>
+            <div class="form-group my-2 ml-4">
+                <textarea class="form-control" v-model="reply_text" placeholder="Add a public reply..." cols="50"></textarea>
             </div>
+            <div class="form-group ml-4">
+                <button class="btn btn-secondary btn-sm" @click.prevent="hideReplyForm()">Cancel</button>
+                <button class="btn btn-primary btn-success btn-sm" @click.prevent="reply()">Reply</button>
             </div>
-            <button class="btn btn-secondary" @click.prevent="hideReplyForm()">Cancel</button>
-            <button class="btn btn-primary" @click.prevent="reply()">Reply</button>
         </div>
     </div>
 </template>
