@@ -27,8 +27,12 @@
 
     <div class="row justify-content-center py-4">
         <div class="col-12 col-lg-8">
-            COMMENT FORM HERE
-            <div class="card bg-light">
+
+            <comment-form> </comment-form>
+
+            <hr>
+            <h2>Comments: </h2>
+            <div class="card bg-light mt-3">
                 <div class="card-body">
 
                     <div class="callout callout-default">
@@ -40,7 +44,7 @@
                             <small class="text-muted">This is a default callout.</small>
                         </div>
                     </div>
-                    <example-component />
+                    <!-- <example-component /> -->
 
                 </div>
             </div>

@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.callout {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);h2 {
+  color: #6c757d;
+}
+
+.callout {
   padding: 20px;
   margin: 20px 0;
   border: 1px solid #eee;
