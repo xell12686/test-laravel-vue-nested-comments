@@ -23,8 +23,6 @@ Create a comment system single-page web application with Laravel 5.5+ and VueJS 
 - Run: composer install
 - Run: php artisan key:generate
 - Run: php artisan migrate
-- Run: npm install ( developed in node v14.15.5 )
-- Run: npm run dev
 - Run: php artisan serve
 - Open http://127.0.0.1:8000/ in browser
 - Login / Register and account
