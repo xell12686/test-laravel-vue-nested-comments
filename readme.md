@@ -28,3 +28,6 @@ Create a comment system single-page web application with Laravel 5.5+ and VueJS 
 - Login / Register and account
 - Add Comments from to popalate database and test app
 
+## App Video demo
+
+https://www.loom.com/share/2566b58364184cc0b732286cf7de658e
