@@ -15,5 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 Route::get('comments', 'CommentController@index');
 Route::post('comments/create', 'CommentController@store');
