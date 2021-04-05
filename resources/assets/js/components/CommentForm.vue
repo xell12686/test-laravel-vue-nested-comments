@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="clearfix">
         <textarea class="form-control" v-model="comment" placeholder="Add a a comment..."></textarea>
-        <button class="btn btn-primary mt-2" @click.prevent="storeComment">Comment</button>
+        <button class="btn btn-primary float-right mt-2" @click.prevent="storeComment">Comment</button>
     </div>
 </template>
 

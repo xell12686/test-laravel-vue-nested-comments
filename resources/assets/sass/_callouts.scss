@@ -1,13 +1,17 @@
-h2 {
-    color: $grey;
-}
 
+.card.comments-list {
+    background-color: rgba(0, 0, 0, 0.03);
+    h2 {
+        // color: $white;
+    }
+}
 .callout {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 10px 20px;
+    margin: 15px 0;
     border: 1px solid #eee;
     border-left-width: 5px;
     border-radius: 3px;
+    background-color: $white;
     .avatar {
         width: 50px;
         height: 50px;
@@ -28,12 +32,10 @@ h2 {
     p:last-child {
         margin-bottom: 0;
     }
-    code {
-        border-radius: 3px;
+    .content {
+        font-size: 14px;
     }
-    & + .bs-callout {
-        margin-top: -5px;
-    }
+
 }
 @each $name, $color in (default, #777), (primary, #428bca), (success, #5cb85c),
     (danger, #d9534f), (warning, #f0ad4e), (info, #5bc0de), (bdc, #29527a)

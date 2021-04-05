@@ -1,13 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);h2 {
-  color: #6c757d;
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.card.comments-list {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .callout {
-  padding: 20px;
-  margin: 20px 0;
+  padding: 10px 20px;
+  margin: 15px 0;
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;
+  background-color: #f8fafc;
 }
 
 .callout .avatar {
@@ -34,12 +35,8 @@
   margin-bottom: 0;
 }
 
-.callout code {
-  border-radius: 3px;
-}
-
-.callout + .bs-callout {
-  margin-top: -5px;
+.callout .content {
+  font-size: 14px;
 }
 
 .callout-default {

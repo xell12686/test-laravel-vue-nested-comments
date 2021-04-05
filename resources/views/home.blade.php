@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center py-4">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-9">
             <div class="card panel-default">
                 <div class="card-body">
                     <div class="card-header mb-3">
@@ -26,28 +26,12 @@
     </div>
 
     <div class="row justify-content-center py-4">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-9">
 
             <comment-form> </comment-form>
 
-            <hr>
-            <h2>Comments: </h2>
-            <div class="card bg-light mt-3">
-                <div class="card-body">
+            <comment-list> </comment-form>
 
-                    <div class="callout callout-default">
-                        <div class="avatar">
-                            <img src="{{url('/images/user-icon.jpg')}}" alt="icon" class="img-fluid"/>
-                        </div>
-                        <div class="comment-meta ml-3">
-                            <strong class="text-primary mr-1">Default Callout</strong>
-                            <small class="text-muted">This is a default callout.</small>
-                        </div>
-                    </div>
-                    <!-- <example-component /> -->
-
-                </div>
-            </div>
         </div>
     </div>
 
