@@ -2,7 +2,7 @@
     <div class="card comments-list mt-3">
         <div class="card-body">
             <h2 class="card-title">Comments:</h2>
-            <div v-for="comment in comments">
+            <div v-for="comment in comments" v-bind:key="comment.id">
                 <comment :comment="comment" v-bind:key="comment.id"></comment>
             </div>
 

@@ -4,7 +4,6 @@
         <div class="callout callout-default">
             <div class="avatar">
                 <img src="/images/user-icon.jpg" alt="icon" class="img-fluid"/>
-                <!-- <img :src="'https://via.placeholder.com/40/FF0000/FFFFFF?text=' + comment.user.name_first_character" class="img rounded-circle"> -->
             </div>
             <div class="comment-meta ml-3">
                 <strong class="text-primary mr-1">{{ comment.user.name }}</strong>
@@ -13,18 +12,25 @@
             <div class="content">
                 {{ comment.content }}
             </div>
+            <reply-form :comment="comment"/>
         </div>
+
+        <replies :comment="comment" v-bind:key="comment.id" :depth="1" />
 
     </div>
 
 </template>
 
 <script>
+    import ReplyForm from './ReplyForm.vue';
+    import Replies from './Replies.vue';
     import Comment from './Comment.vue';
     export default {
         props: ['comment'],
 
         components: {
+            ReplyForm,
+            Replies,
             Comment
         },
     }

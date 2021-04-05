@@ -9,6 +9,10 @@
     display: inline-block;
     border-radius: 100%;
     overflow: hidden;
+    .reply & {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .callout {

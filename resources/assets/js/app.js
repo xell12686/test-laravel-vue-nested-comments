@@ -21,6 +21,7 @@ Vue.prototype.$authUser = window.user;
 
 Vue.component('comment-form', require('./components/CommentForm.vue'));
 Vue.component('comment-list', require('./components/CommentList.vue'));
+Vue.component('replies', require('./components/Replies.vue'));
 
 const app = new Vue({
     el: '#app'
