@@ -27,8 +27,11 @@
 
     <div class="row justify-content-center py-4">
         <div class="col-12 col-lg-9">
+        @guest
 
+        @else
             <comment-form> </comment-form>
+        @endguest
 
             <comment-list> </comment-form>
 

@@ -1,10 +1,16 @@
 
 .card.comments-list {
     background-color: rgba(0, 0, 0, 0.03);
-    h2 {
-        // color: $white;
-    }
 }
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
 .callout {
     padding: 10px 20px;
     margin: 15px 0;
@@ -12,13 +18,6 @@
     border-left-width: 5px;
     border-radius: 3px;
     background-color: $white;
-    .avatar {
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        border-radius: 100%;
-        overflow: hidden;
-    }
     .comment-meta {
         display: inline-block;
         position: relative;
