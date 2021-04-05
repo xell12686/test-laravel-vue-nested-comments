@@ -50139,7 +50139,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            replyDepth: this.depth
+            nextReplyDepth: this.depth
         };
     },
 
@@ -50149,7 +50149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     created: function created() {
-        this.replyDepth++;
+        this.nextReplyDepth++;
     }
 });
 
@@ -50185,7 +50185,9 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", [_vm._v(_vm._s(comment.content))]),
                       _vm._v(" "),
-                      _c("reply-form", { attrs: { comment: comment } })
+                      _vm.nextReplyDepth < 3
+                        ? _c("reply-form", { attrs: { comment: comment } })
+                        : _vm._e()
                     ],
                     1
                   )
@@ -50193,7 +50195,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("replies", {
                   key: comment.id,
-                  attrs: { comment: comment, depth: _vm.replyDepth }
+                  attrs: { comment: comment, depth: _vm.nextReplyDepth }
                 })
               ],
               1
@@ -50266,7 +50268,7 @@ var render = function() {
       _vm._v(" "),
       _c("replies", {
         key: _vm.comment.id,
-        attrs: { comment: _vm.comment, depth: 1 }
+        attrs: { comment: _vm.comment, depth: 0 }
       })
     ],
     1

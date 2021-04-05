@@ -15,7 +15,7 @@
             <reply-form :comment="comment"/>
         </div>
 
-        <replies :comment="comment" v-bind:key="comment.id" :depth="1" />
+        <replies :comment="comment" v-bind:key="comment.id" :depth="0" />
 
     </div>
 

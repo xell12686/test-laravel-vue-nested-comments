@@ -10,10 +10,10 @@
                     <div class="ml-3">
                         <h6><strong>{{ comment.user.name }}</strong> <small>{{ comment.created_at }}</small></h6>
                         <div>{{ comment.content }}</div>
-                        <reply-form :comment="comment"/>
+                        <reply-form :comment="comment" v-if="nextReplyDepth < 3"/>
                     </div>
                 </div>
-                <replies :comment="comment" v-bind:key="comment.id" :depth="replyDepth" />
+                <replies :comment="comment" v-bind:key="comment.id" :depth="nextReplyDepth" />
             </div>
         </div>
    </div>
@@ -29,7 +29,7 @@
 
         data() {
             return {
-                replyDepth: this.depth,
+                nextReplyDepth: this.depth,
             }
         },
 
@@ -38,7 +38,7 @@
         },
 
         created() {
-            this.replyDepth++;
+            this.nextReplyDepth++;
         }
     }
 </script>
